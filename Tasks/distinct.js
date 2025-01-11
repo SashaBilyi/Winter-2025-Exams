@@ -8,13 +8,13 @@ const DISTINCT = (data) => {
   const filteredData = [];
 
   for (const value of data) {
-    if (!A.has(value)) {
+    if (typeof value === 'number' && !A.has(value)) {
       A.add(value);
       filteredData.push(value);
     }
   }
 
-  return filteredData.filter((x) => typeof x === 'number');
+  return filteredData;
 };
 
 module.exports = DISTINCT;
