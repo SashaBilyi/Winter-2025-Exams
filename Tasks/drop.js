@@ -3,13 +3,12 @@
 
 'use strict';
 
-const DroP = (object, ...keysToDrop) => {
-  for (const key of Object.keys(object)) {
-    if (keysToDrop.includes(key)) {
-      delete object[key];
+const DroP = (object, ...keysToDrop) =>
+  Object.keys(object).reduce((result, key) => {
+    if (!keysToDrop.includes(key)) {
+      result[key] = object[key];
     }
-  }
-  return object;
-};
+    return result;
+  }, {});
 
 module.exports = DroP;
