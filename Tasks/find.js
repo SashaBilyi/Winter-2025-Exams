@@ -8,8 +8,7 @@ find = (object, ...rest) => {
 
   for (const name in object) {
     if (object[name] === value) {
-      if (typeof name) return name;
-      if (typeof object) return object;
+      return name;
     }
   }
 
