@@ -5,16 +5,16 @@
 
 const DISTINCT = (data) => {
   const A = new Set();
-  let w = 0;
-  data.forEach((a) => {
-    if (A.has(a)) {
-      delete data[w];
-    } else {
-      A.add(a);
+  const filteredData = [];
+
+  for (const value of data) {
+    if (!A.has(value)) {
+      A.add(value);
+      filteredData.push(value);
     }
-    w++;
-  });
-  return data.filter((x) => typeof x === 'number');
+  }
+
+  return filteredData.filter((x) => typeof x === 'number');
 };
 
 module.exports = DISTINCT;
