@@ -3,18 +3,18 @@
 
 'use strict';
 
-const DISTINCT = (data) => {
-  const A = new Set();
-  const filteredData = [];
+const DISTINCT = (array) => {
+  const uniqueNumbers = new Set();
+  const result = [];
 
-  for (const value of data) {
-    if (typeof value === 'number' && !A.has(value)) {
-      A.add(value);
-      filteredData.push(value);
+  for (const item of array) {
+    if (typeof item === 'number' && !uniqueNumbers.has(item)) {
+      uniqueNumbers.add(item);
+      result.push(item);
     }
   }
 
-  return filteredData;
+  return result;
 };
 
 module.exports = DISTINCT;
