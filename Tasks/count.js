@@ -6,8 +6,7 @@
 const count = (obj) => {
   let sum = 0;
   for (const key of Object.keys(obj)) {
-    const value = obj[key];
-    if (typeof value === 'number') sum += value;
+    if (typeof obj[key] === 'number') sum += obj[key];
   }
   return sum;
 };
