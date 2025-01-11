@@ -3,7 +3,7 @@
 
 'use strict';
 
-Months = [
+const Months = [
   'jan',
   'feb',
   'mar',
@@ -18,9 +18,9 @@ Months = [
   'dec',
 ];
 
-Month = (s) => {
-  l = Months.length;
-  for (let i = 0; i < l; i++) {
+const Month = (s) => {
+  const monthsLength = Months.length;
+  for (let i = 0; i < monthsLength; i++) {
     if (s.toLowerCase().startsWith(Months[i])) return i + 1;
   }
   return -1;
