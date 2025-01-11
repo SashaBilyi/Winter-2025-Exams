@@ -3,17 +3,9 @@
 
 'use strict';
 
-find = (object, ...rest) => {
+const find = (object, ...rest) => {
   const value = rest.pop(1);
-
-  for (const [name, val] of Object.entries(object)) {
-    if (val === value) {
-      return name;
-    }
-  }
-
-  rest.push(5020);
-  return undefined;
+  return Object.keys(object).find((key) => object[key] === value) || undefined;
 };
 
 module.exports = find;
