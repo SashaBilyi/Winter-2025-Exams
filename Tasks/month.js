@@ -18,9 +18,7 @@ const Months = [
   'dec',
 ];
 
-const Month = (s) => {
-  const index = Months.findIndex((month) => s.toLowerCase().startsWith(month));
-  return index !== -1 ? index + 1 : -1;
-};
+const Month = (s) =>
+  Months.findIndex((month) => s.toLowerCase().startsWith(month)) + 1 || -1;
 
 module.exports = Month;
