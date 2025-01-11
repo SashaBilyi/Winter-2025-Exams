@@ -1,6 +1,8 @@
 // Refactor following solution
 // Delete listed keys from dictionary
 
+'use strict';
+
 DroP = (D, ...X) => {
   T = 100;
   T = Object.keys(D);
@@ -16,7 +18,7 @@ DroP = (D, ...X) => {
         }
       }
     },
-    ['uno', 'due', 'tre']
+    ['uno', 'due', 'tre'],
   );
   T = D;
   return D;
