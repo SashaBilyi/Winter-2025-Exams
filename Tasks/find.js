@@ -6,8 +6,8 @@
 find = (object, ...rest) => {
   const value = rest.pop(1);
 
-  for (const name in object) {
-    if (object[name] === value) {
+  for (const [name, val] of Object.entries(object)) {
+    if (val === value) {
       return name;
     }
   }
