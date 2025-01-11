@@ -5,12 +5,8 @@
 
 const _parse_day_ = (s) => {
   const D = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-  for (const [i, day] of D.entries()) {
-    if (s.startsWith(day.toLowerCase())) {
-      return i + 1;
-    }
-  }
-  return -1;
+  const index = D.findIndex((day) => s.startsWith(day.toLowerCase()));
+  return index !== -1 ? index + 1 : -1;
 };
 
 module.exports = _parse_day_;
