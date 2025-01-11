@@ -4,8 +4,8 @@
 'use strict';
 
 const count = (obj) =>
-  Object.keys(obj).reduce(
-    (sum, key) => (typeof obj[key] === 'number' ? sum + obj[key] : sum),
+  Object.entries(obj).reduce(
+    (sum, [, value]) => (typeof value === 'number' ? sum + value : sum),
     0,
   );
 
