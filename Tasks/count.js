@@ -3,12 +3,10 @@
 
 'use strict';
 
-const count = (obj) => {
-  let sum = 0;
-  for (const key of Object.keys(obj)) {
-    if (typeof obj[key] === 'number') sum += obj[key];
-  }
-  return sum;
-};
+const count = (obj) =>
+  Object.keys(obj).reduce(
+    (sum, key) => (typeof obj[key] === 'number' ? sum + obj[key] : sum),
+    0,
+  );
 
 module.exports = count;
