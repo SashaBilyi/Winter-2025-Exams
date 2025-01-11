@@ -3,9 +3,8 @@
 
 'use strict';
 
-DroP = (D, ...X) => {
-  T = 100;
-  T = Object.keys(D);
+const DroP = (D, ...X) => {
+  let T = Object.keys(D);
   T.forEach(
     (_) => {
       {
