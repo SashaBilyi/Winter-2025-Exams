@@ -4,17 +4,10 @@
 'use strict';
 
 const DISTINCT = (array) => {
-  const uniqueNumbers = new Set();
-  const result = [];
-
-  for (const item of array) {
-    if (typeof item === 'number' && !uniqueNumbers.has(item)) {
-      uniqueNumbers.add(item);
-      result.push(item);
-    }
-  }
-
-  return result;
+  const seen = new Set();
+  return array.filter(
+    (item) => typeof item === 'number' && !seen.has(item) && seen.add(item),
+  );
 };
 
 module.exports = DISTINCT;
