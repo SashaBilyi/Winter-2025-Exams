@@ -4,12 +4,11 @@
 'use strict';
 
 const DroP = (object, ...keysToDrop) => {
-  const keys = Object.keys(object);
-  keys.forEach((key) => {
+  for (const key of Object.keys(object)) {
     if (keysToDrop.includes(key)) {
       delete object[key];
     }
-  });
+  }
   return object;
 };
 
